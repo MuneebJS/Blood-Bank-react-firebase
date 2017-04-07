@@ -1,7 +1,9 @@
 import React from 'react'
 import * as firebase from 'firebase'
 import { browserHistory } from 'react-router'
-
+import Input from './input';
+import Btn from './btn'
+import Heading from './heading';
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -11,8 +13,8 @@ class SignUp extends React.Component {
 
     signUp(ev) {
         ev.preventDefault();
-        let email = this.refs.sign_up_email.value;
-        let pass = this.refs.sign_up_pass.value;
+        let email = this.refs.sign_up_email.state.value;
+        let pass = this.refs.sign_up_pass.state.value;
         console.log(email, pass)
         
         const auth = firebase.auth();
@@ -31,12 +33,11 @@ class SignUp extends React.Component {
     render() {
         return (
             <div>
+                <Heading>Sign Up</Heading>
                 <form onSubmit={this.signUp}>
-                    <label htmlFor="email">Email</label> <br />
-                    <input type="email" ref="sign_up_email" /> <br />
-                    <label htmlFor="password">Password</label> <br />
-                    <input type="password" ref="sign_up_pass" /> <br />
-                    <input type="submit" value="Sign Up" />
+                    <Input type="text" placeholder="email" ref="sign_up_email">Emial</Input>
+                    <Input type="text" placeholder="password" ref="sign_up_pass">Password</Input>
+                    <Btn type="submit">Sign up</Btn>
                 </form>
             </div>
         )

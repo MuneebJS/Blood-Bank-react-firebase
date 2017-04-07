@@ -14,7 +14,6 @@ class SignOut extends React.Component {
         promise.then((user) => {
             console.log(user)
             browserHistory.push('/')
-
         })
         promise.catch(e => {
             console.log(e.message)
@@ -24,7 +23,7 @@ class SignOut extends React.Component {
         return (
             <div>
                 <form onSubmit={this.signOut}>
-                    <input type="submit" value="Sign out" />
+                    <input type="submit" className="btn btn-danger" value="Sign out" />
                 </form>
             </div>
         )

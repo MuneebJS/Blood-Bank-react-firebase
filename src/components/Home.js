@@ -1,12 +1,15 @@
-import React from 'react'   
+import React from 'react'
 import SignOut from './signout'
+import Heading from './heading'
+
 
 
 const Home = () => {
     return (
-        <div>
-            <h1>You have successfully logged in </h1>
-             <SignOut />
+        <div style={{backgroundColor: "#a3382a", width: '800px', height: '1000px'}}>
+            <Heading>Blood Bank Application</Heading>
+
+         
         </div>
     )
 }
